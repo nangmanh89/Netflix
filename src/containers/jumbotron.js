@@ -1,22 +1,27 @@
-// import jumboData from '../fixtures/jumbo.json';
-// import Jumbotron from '../components/jumbotron';
+import jumboData from '../fixtures/jumbo.json';
+import { Jumbotron } from '../components';
 
-// export default function App() {
-//     return (
-//         <Jumbotron.Container>
-//             {jumboData.map((item) => (
-//                 <Jumbotron key={item.id} direction={item.direction}>
-//                     <Jumbotron.Pane>
-//                         <Jumbotron.Title>{item.title}</Jumbotron.Title>
-//                         <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
-//                     </Jumbotron.Pane>
-//                     <Jumbotron.Pane>
-//                         <Jumbotron.Image src={item.image} alt={item.alt}>
-//                             <Jumbotron.Video src={item.image} alt={item.alt}></Jumbotron.Video>
-//                         </Jumbotron.Image>
-//                     </Jumbotron.Pane>
-//                 </Jumbotron>
-//             ))}
-//         </Jumbotron.Container>
-//     );
-// }
+export function JumbotronContainer() {
+    return (
+        <Jumbotron.Container>
+            {jumboData.map((item) => (
+                <Jumbotron key={item.id} direction={item.direction}>
+                    <Jumbotron.Pane>
+                        <Jumbotron.Title>{item.title}</Jumbotron.Title>
+                        <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
+                    </Jumbotron.Pane>
+                    <Jumbotron.Pane>
+                        <Jumbotron.Image src={item.image} alt={item.alt} />
+                        <Jumbotron.VideoContainer
+                            id={item.id}
+                            src={item.video}
+                            muted
+                            loop
+                            autoPlay
+                        ></Jumbotron.VideoContainer>
+                    </Jumbotron.Pane>
+                </Jumbotron>
+            ))}
+        </Jumbotron.Container>
+    );
+}
