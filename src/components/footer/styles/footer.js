@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 export const Container = styled.div`
     display: flex;
-    padding: 70px 56px;
+    padding: 70px 56px 0 56px;
     margin: auto;
     max-width: 1000px;
     flex-direction: column;
@@ -32,6 +32,9 @@ export const Link = styled.a`
     margin-bottom: 20px;
     font-size: 16px;
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 `;
 
 export const Title = styled.p`
@@ -41,7 +44,7 @@ export const Title = styled.p`
 `;
 
 export const Text = styled.p`
-    font-size: 13px;
+    font-size: 16px;
     color: #757575;
     margin-bottom: 40px;
 `;

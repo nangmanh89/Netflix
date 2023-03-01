@@ -55,7 +55,6 @@ export const Image = styled.img`
     height: auto;
     position: relative;
     z-index: 1;
-
     @media (max-width: 1000px) {
         max-width: ${({ id }) => (id === 2 ? '50%' : '100%')};
     }
