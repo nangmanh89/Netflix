@@ -19,7 +19,7 @@ Accordion.Item = function AccordionItem({ children, ...restProps }) {
     const [toggleShow, setToggleShow] = useState(false);
     return (
         <ToggleContext.Provider value={{ toggleShow, setToggleShow }}>
-            <Item {...restProps}>{children}</Item>;
+            <Item {...restProps}>{children}</Item>
         </ToggleContext.Provider>
     );
 };
@@ -40,5 +40,5 @@ Accordion.Header = function AccordionHeader({ children, ...restProps }) {
 
 Accordion.Body = function AccordionBody({ children, ...restProps }) {
     const { toggleShow } = useContext(ToggleContext);
-    return toggleShow ? <Body {...restProps}>{children}</Body> : null;
+    return toggleShow && <Body {...restProps}>{children}</Body>;
 };

@@ -11,7 +11,7 @@ export const Inner = styled.div`
     display: flex;
     padding: 70px 45px;
     flex-direction: column;
-    max-width: 650px;
+    max-width: 820px;
     /* margin: auto; */
     @media (max-width: 600px) {
         padding: 70px 0;
