@@ -3,7 +3,6 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     height: 100%;
-    margin-top: 20px;
     flex-wrap: wrap;
     max-width: 820px;
     @media (max-width: 1000px) {
@@ -33,6 +32,7 @@ export const Button = styled.button`
     padding: 0px 1em;
     font-size: 26px;
     border: none;
+    border-radius: 2px;
     cursor: pointer;
     margin-left: 1px;
     &:hover {

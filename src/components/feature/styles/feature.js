@@ -3,8 +3,11 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    border-bottom: 8px solid solid #222;
     text-align: center;
+    padding: 165px 45px;
+    @media (max-width: 600px) {
+        padding: 165px 0;
+    }
 `;
 export const Title = styled.h1`
     color: white;
@@ -12,8 +15,9 @@ export const Title = styled.h1`
     font-size: 50px;
     font-weight: bold;
     margin: auto;
-    @media (max: 600px) {
-        font-size: 35px;
+    @media (max-width: 600px) {
+        font-size: 28px;
+        max-width: 385px;
     }
 `;
 export const SubTitle = styled.h2`
@@ -22,6 +26,7 @@ export const SubTitle = styled.h2`
     font-weight: 500;
     margin: auto;
     @media (max-width: 600px) {
-        font-size: 35px;
+        font-size: 18px;
+        margin-top: 16px;
     }
 `;
