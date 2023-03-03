@@ -1,7 +1,7 @@
 import React from 'react';
 import { Footer } from '../components';
 
-export function FooterContainer() {
+export default function FooterContainer() {
     return (
         <Footer>
             <Footer.Link href="#">Question? Contact us.</Footer.Link>
