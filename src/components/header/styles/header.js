@@ -9,7 +9,6 @@ export const Background = styled.div`
         url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-sigup.jpg')}) no-repeat center/
             cover;
     border-bottom: 8px solid #222;
-    /* padding-bottom: 200px; */
 `;
 
 export const Frame = styled.div``;
