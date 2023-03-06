@@ -9,25 +9,30 @@ import { Form } from '../components';
 import * as ROUTES from '../constants/routes';
 
 export default function Signin() {
-    const history = useNavigate();
-    const { firebase } = useContext(FirebaseContext);
-    const auth = getAuth(firebase);
+    console.log('this is sigin page');
+
     const [emailAddress, setEmailAdress] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    const history = useNavigate();
+    const { firebase } = useContext(FirebaseContext);
+    const auth = getAuth(firebase);
+
     // Check form input element are valid
     const isInValid = password === '' || emailAddress === '';
-    // Email & password
 
+    // Email & password
     const handleSignIn = (event) => {
         event.preventDefault();
+
         //firebase work here!
         signInWithEmailAndPassword(auth, emailAddress, password)
             .then((user) => {
-                console.log(user);
+                console.log(user.user);
+
                 //push to the browse page
-                // history(ROUTES.BROWSE);
+                history(ROUTES.BROWSE);
             })
             .catch((error) => {
                 setEmailAdress('');
@@ -41,6 +46,7 @@ export default function Signin() {
                 <Form>
                     <Form.Title>Sign In</Form.Title>
                     {error && <Form.Error>{error}</Form.Error>}
+
                     <Form.Base onSubmit={handleSignIn} method="POST">
                         <Form.Input
                             placeholder="Email address"
@@ -48,18 +54,22 @@ export default function Signin() {
                             onChange={(e) => setEmailAdress(e.target.value)}
                             type="email"
                         ></Form.Input>
+
                         <Form.Input
                             type="password"
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         ></Form.Input>
+
                         <Form.Submit disabled={isInValid} type="submit">
                             Sign In
                         </Form.Submit>
+
                         <Form.Text>
-                            New to Netflix?<Form.Link to="/signup">Sign up now.</Form.Link>
+                            New to Netflix?<Form.Link to="/signUp">Sign up now.</Form.Link>
                         </Form.Text>
+
                         <Form.TextSmall>
                             This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more
                         </Form.TextSmall>
