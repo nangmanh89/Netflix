@@ -48,19 +48,21 @@ export default function Signup() {
     };
     return (
         <>
-            <HeaderContainer>
-                <Form>
-                    <Form.Title>Sign Up</Form.Title>
+            <HeaderContainer signup src>
+                <Form signup>
+                    <Form.Title signup>Sign Up</Form.Title>
                     {error && <Form.Error>{error}</Form.Error>}
 
                     <Form.Base onSubmit={handleSignUp} method="POST">
                         <Form.Input
+                            signup
                             placeholder="First Name"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                         ></Form.Input>
 
                         <Form.Input
+                            signup
                             type="email"
                             placeholder="Email address"
                             value={emailAddress}
@@ -68,6 +70,7 @@ export default function Signup() {
                         ></Form.Input>
 
                         <Form.Input
+                            signup
                             type="password"
                             placeholder="Password"
                             value={password}
@@ -82,15 +85,18 @@ export default function Signup() {
                         ></Form.Input> */}
 
                         {/* if isValid => Submitbutton disabled with opactiy = 0.5 at styled */}
-                        <Form.Submit disabled={isInValid} type="submit">
+                        <Form.Submit signup disabled={isInValid} type="submit">
                             Sign Up
                         </Form.Submit>
 
-                        <Form.Text>
-                            Already a user?<Form.Link to="/signIn">Sign in now.</Form.Link>
+                        <Form.Text signup>
+                            Already a user?
+                            <Form.Link to="/signIn" signup>
+                                Sign in now.
+                            </Form.Link>
                         </Form.Text>
 
-                        <Form.TextSmall>
+                        <Form.TextSmall signup>
                             This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more
                         </Form.TextSmall>
                     </Form.Base>

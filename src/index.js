@@ -8,10 +8,10 @@ import { FirebaseContext } from './context/firebase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <FirebaseContext.Provider value={{ firebase }}>
-            <GlobalStyle />
-            <App />
-        </FirebaseContext.Provider>
-    </React.StrictMode>,
+    // <React.StrictMode>
+    <FirebaseContext.Provider value={{ firebase }}>
+        <GlobalStyle />
+        <App />
+    </FirebaseContext.Provider>,
+    // </React.StrictMode>,
 );

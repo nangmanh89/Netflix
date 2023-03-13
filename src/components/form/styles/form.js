@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 660px;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: ${({ signup }) => (signup ? 'rgba(243, 243, 243, 0.7)' : 'rgba(0, 0, 0, 0.75)')};
     border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
@@ -32,14 +32,14 @@ export const Error = styled.div`
 `;
 
 export const Title = styled.h1`
-    color: #fff;
+    color: ${({ signup }) => (signup ? '#333' : '#fff')};
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 28px;
 `;
 
 export const Text = styled.p`
-    color: #737373;
+    color: ${({ signup }) => (signup ? 'black' : '#737373')};
     font-size: 16px;
     font-weight: 500;
 `;
@@ -48,11 +48,11 @@ export const TextSmall = styled.p`
     margin-top: 10px;
     font-size: 13px;
     line-height: normal;
-    color: #8c8c8c;
+    color: ${({ signup }) => (signup ? 'black' : '#8c8c8c')};
 `;
 
 export const Link = styled(ReactRouterLink)`
-    color: white;
+    color: ${({ signup }) => (signup ? '#0071eb' : 'white')};
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -60,10 +60,10 @@ export const Link = styled(ReactRouterLink)`
 `;
 
 export const Input = styled.input`
-    background-color: #333;
+    background-color: ${({ signup }) => (signup ? 'white' : '#333')};
     border-radius: 4px;
-    border: 0;
-    color: white;
+    border: ${({ signup }) => (signup ? '1px solid black' : '0')};
+    color: ${({ signup }) => (signup ? 'black' : 'white')};
     height: 50px;
     line-height: 50px;
     padding: 5px 20px;
@@ -74,7 +74,7 @@ export const Input = styled.input`
 `;
 
 export const Submit = styled.button`
-    background-color: #e50914;
+    background-color: ${({ signup }) => (signup ? '#0080ff' : '#e50914')};
     border-radius: 4px;
     font-size: 16px;
     font-weight: bold;

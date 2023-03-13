@@ -6,7 +6,7 @@ export const Background = styled.div`
     flex-direction: column;
     align-items: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0, transparent 60%, rgba(0, 0, 0, 0.8)),
-        url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-sigup.jpg')}) no-repeat center/
+        url(${({ src }) => (src ? '../images/misc/signup.jpg' : '../images/misc/home-sigup.jpg')}) no-repeat center/
             cover;
     border-bottom: 8px solid #222;
 `;
@@ -41,7 +41,7 @@ export const Logo = styled.img`
 export const ButtonLink = styled(ReactRouterLink)`
     display: block;
     background-color: #e50914;
-    width: 84px;
+    min-width: 84px;
     height: fit-content;
     color: white;
     border: 0;

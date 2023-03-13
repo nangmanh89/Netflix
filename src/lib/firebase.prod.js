@@ -17,7 +17,7 @@ const config = {
 const firebase = initializeApp(config);
 
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(firebase);
-seedDatabase(db);
+// const db = getFirestore(firebase);
+// seedDatabase(db);
 
 export { firebase };

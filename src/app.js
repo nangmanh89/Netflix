@@ -1,15 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Signup, Home, Browse, Signin } from './pages';
+import * as ROUTES from './constants/routes';
+import { Home, Browse, Signin, Signup } from './pages';
+import { useAuthListener } from './hooks';
 
 export default function App() {
+    const user = useAuthListener();
+    console.log(user);
     return (
         <Router>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/browse" element={<Browse />} />
-                <Route exact path="/signIn" element={<Signin />} />
-                <Route exact path="/signUp" element={<Signup />} />
+                <Route path={ROUTES.SIGN_IN} element={<Signin />} />
+                <Route path={ROUTES.SIGN_UP} element={<Signup />} />
+                <Route exact path={ROUTES.HOME} element={<Home />} />
+                <Route path={ROUTES.BROWSE} element={<Browse />} />
             </Routes>
         </Router>
     );

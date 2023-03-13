@@ -1,4 +1,5 @@
 import React from 'react';
+
 import FaqsContainer from '../containers/faqs';
 import JumbotronContainer from '../containers/jumbotron';
 import FooterContainer from '../containers/footer';
@@ -6,10 +7,9 @@ import HeaderContainer from '../containers/header';
 import { Feature, OptForm } from '../components';
 
 export default function Home() {
-    console.log('this is home page');
     return (
         <>
-            <HeaderContainer>
+            <HeaderContainer home>
                 <Feature>
                     <Feature.Title>Unlimited movies, TV shows, and more.</Feature.Title>
 
@@ -22,7 +22,7 @@ export default function Home() {
 
                         <OptForm.Input placeholder="Email Address" />
 
-                        <OptForm.Button>Get Started</OptForm.Button>
+                        <OptForm.Button to="/signIn">Get Started</OptForm.Button>
                     </OptForm>
                 </Feature>
             </HeaderContainer>
