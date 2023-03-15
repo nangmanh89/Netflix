@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Footer } from '../components';
 
-export default function FooterContainer() {
+function FooterContainer() {
     return (
         <Footer>
             <Footer.Link href="#">Question? Contact us.</Footer.Link>
@@ -37,3 +37,5 @@ export default function FooterContainer() {
         </Footer>
     );
 }
+
+export default memo(FooterContainer);

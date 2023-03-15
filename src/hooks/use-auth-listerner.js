@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // Lấy tài khoản từ firebase lưu vào localStore để duy trì trạng thái đăng nhập
 export default function useAuthListener() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('authUser')));
-    console.log(user);
+    // console.log(user);
     useEffect(() => {
         const auth = getAuth();
         const listener = onAuthStateChanged(auth, (authUser) => {

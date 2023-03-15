@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 import seedDatabase from '../seed';
@@ -15,9 +16,10 @@ const config = {
 
 // Initialize Firebase
 const firebase = initializeApp(config);
+const firebaseAuth = getAuth(firebase);
 
 // Initialize Cloud Firestore and get a reference to the service
-// const db = getFirestore(firebase);
-// seedDatabase(db);
+const db = getFirestore(firebase);
+seedDatabase(db);
 
-export { firebase };
+export { firebase, db, firebaseAuth };

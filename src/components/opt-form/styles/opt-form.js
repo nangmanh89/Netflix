@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
+import { Link as buttonLink } from 'react-router-dom';
+
 export const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -28,7 +29,7 @@ export const Input = styled.input`
     }
 `;
 
-export const ButtonLink = styled(Link)`
+export const ButtonLink = styled(buttonLink)`
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -64,6 +65,7 @@ export const Text = styled.p`
     font-size: 19.2px;
     color: white;
     text-align: center;
+    margin: 34px 0 18px 0;
     @media (max-width: 600px) {
         font-size: 16px;
         line-height: 22px;
